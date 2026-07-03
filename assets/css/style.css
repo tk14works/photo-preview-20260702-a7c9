@@ -243,15 +243,6 @@ p {
   box-shadow: var(--shadow);
 }
 
-.sub-photo {
-  position: absolute;
-  left: 0;
-  bottom: 46px;
-  width: min(54%, 235px);
-  height: 290px;
-  background-color: var(--paper);
-}
-
 .section {
   padding: clamp(70px, 9vw, 118px) clamp(20px, 5vw, 70px);
 }
@@ -274,7 +265,6 @@ p {
   max-width: 680px;
 }
 
-.intro-grid,
 .card-grid,
 .price-list,
 .voice-grid {
@@ -283,7 +273,6 @@ p {
   gap: 16px;
 }
 
-.intro-grid article,
 .service-card,
 .price-list article,
 .voice-grid blockquote {
@@ -294,7 +283,6 @@ p {
   border-radius: var(--radius);
 }
 
-.intro-grid p,
 .service-card p,
 .price-list p,
 .flow-list p,
@@ -304,12 +292,47 @@ p {
   line-height: 2;
 }
 
-.number {
-  display: block;
-  margin-bottom: 26px;
+.service-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 920px;
+}
+
+.service-card {
+  min-height: 320px;
+}
+
+.service-label {
+  margin-bottom: 8px;
   color: var(--plum);
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 6px 11px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  background: rgba(251, 250, 243, 0.72);
+  border: 1px solid var(--soft-line);
+  border-radius: 999px;
+}
+
+.service-note {
+  max-width: 720px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .split {
@@ -668,7 +691,6 @@ details p {
     justify-self: stretch;
   }
 
-  .intro-grid,
   .card-grid,
   .price-list,
   .voice-grid {
@@ -737,17 +759,10 @@ details p {
     height: 365px;
   }
 
-  .sub-photo {
-    width: 58%;
-    height: 205px;
-    bottom: 25px;
-  }
-
   .section {
     padding: 70px 24px;
   }
 
-  .intro-grid article,
   .service-card,
   .price-list article,
   .voice-grid blockquote {
