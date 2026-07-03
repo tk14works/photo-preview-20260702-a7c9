@@ -270,6 +270,9 @@ p {
 .section-heading.narrow {
   display: block;
   max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
 
 #service .section-heading,
@@ -281,6 +284,7 @@ p {
 }
 
 #service .section-heading p,
+.section-heading.narrow p,
 .gallery-copy > p {
   max-width: 620px;
   margin-right: auto;
@@ -425,6 +429,7 @@ p {
 .mini-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 380px;
   gap: 10px;
   width: 100%;
   min-height: 380px;
@@ -432,7 +437,7 @@ p {
 
 .mini-gallery span:nth-child(1),
 .mini-gallery span:nth-child(3) {
-  margin-top: 44px;
+  margin-top: 0;
 }
 
 .price-list article {
@@ -461,6 +466,10 @@ p {
   max-width: 1040px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.flow .section-heading.narrow {
+  max-width: 680px;
 }
 
 .flow-list {
@@ -517,6 +526,12 @@ p {
   max-width: 900px;
 }
 
+.faq details {
+  width: min(100%, 760px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
 details {
   padding: 21px 0;
   border-top: 1px solid var(--soft-line);
@@ -531,6 +546,7 @@ summary {
   color: var(--ink);
   font-family: var(--serif);
   font-weight: 600;
+  line-height: 1.8;
 }
 
 details p {
@@ -799,6 +815,7 @@ details p {
   }
 
   #service .section-heading,
+  .section-heading.narrow,
   .gallery-copy,
   .news > div,
   .service-note {
@@ -832,6 +849,7 @@ details p {
 
   .mini-gallery {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 210px;
     min-height: 430px;
   }
 
