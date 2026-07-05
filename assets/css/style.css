@@ -961,9 +961,17 @@ details p {
     padding: 60px 24px;
   }
 
+  .faq details {
+    width: min(100%, 280px);
+  }
+
+  .faq details p {
+    max-width: none;
+  }
+
   .flow-list li {
     grid-template-columns: 28px minmax(0, 1fr);
-    width: min(100%, 320px);
+    width: min(100%, 280px);
     margin-right: auto;
     margin-left: auto;
     justify-items: start;
