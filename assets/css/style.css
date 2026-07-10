@@ -59,7 +59,7 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   color: var(--ink);
   font-family: var(--serif);
   font-size: 15px;
