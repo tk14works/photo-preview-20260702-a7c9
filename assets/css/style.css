@@ -66,12 +66,12 @@ img {
   font-weight: 600;
 }
 
-.brand-mark {
-  width: 25px;
-  height: 25px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: radial-gradient(circle at 38% 38%, var(--honey), var(--paper) 58%, var(--sage));
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 auto;
 }
 
 .site-nav {
