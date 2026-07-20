@@ -464,6 +464,8 @@ p {
 
 .profile-photo {
   position: relative;
+  aspect-ratio: 3 / 2;
+  min-height: 0;
   align-items: stretch;
   justify-content: stretch;
   background: var(--paper);
@@ -885,34 +887,31 @@ details p {
   }
 
   .service-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(274px, 80vw);
-    grid-template-columns: none;
+    --service-card-width: min(420px, 80vw);
+    display: flex;
+    width: 100vw;
     max-width: none;
     margin-right: calc(clamp(20px, 5vw, 70px) * -1);
     margin-left: calc(clamp(20px, 5vw, 70px) * -1);
-    padding: 0 calc((100vw - min(80vw, 420px)) / 2) 10px;
+    padding: 0 calc((100vw - var(--service-card-width)) / 2) 10px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
-    scroll-snap-type: inline proximity;
-    scroll-padding-inline: calc((100vw - min(80vw, 420px)) / 2);
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: calc((100vw - var(--service-card-width)) / 2);
     -webkit-overflow-scrolling: touch;
   }
 
   .service-grid .service-card {
+    flex: 0 0 var(--service-card-width);
     min-height: 240px;
     scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   .card-grid,
   .price-list,
   .voice-grid {
     grid-template-columns: 1fr;
-  }
-
-  .service-grid {
-    grid-template-columns: none;
   }
 
   .flow-list li {
@@ -1017,12 +1016,13 @@ details p {
   }
 
   .service-grid {
-    grid-auto-columns: minmax(274px, 80vw);
+    --service-card-width: min(316px, 80vw);
+    grid-auto-columns: var(--service-card-width);
     margin-right: -24px;
     margin-left: -24px;
-    padding-right: 39px;
-    padding-left: 39px;
-    scroll-padding-inline: 39px;
+    padding-right: calc((100vw - var(--service-card-width)) / 2);
+    padding-left: calc((100vw - var(--service-card-width)) / 2);
+    scroll-padding-inline: calc((100vw - var(--service-card-width)) / 2);
   }
 
   .soft-image {
