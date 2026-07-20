@@ -24,6 +24,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background: var(--cream);
   font-family: var(--sans);
@@ -187,6 +188,7 @@ p {
   color: var(--muted);
   font-size: 15px;
   line-height: 2.15;
+  overflow-wrap: anywhere;
 }
 
 .hero-actions {
@@ -202,12 +204,16 @@ p {
   align-items: center;
   justify-content: center;
   min-height: 46px;
-  padding: 11px 22px;
+  padding: 11px 26px;
   border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
   line-height: 1.35;
+}
+
+.hero-actions .button {
+  min-width: 148px;
 }
 
 .button.primary {
@@ -328,14 +334,14 @@ p {
 }
 
 .service-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 920px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1120px;
   margin-right: auto;
   margin-left: auto;
 }
 
 .service-card {
-  min-height: 320px;
+  min-height: 260px;
 }
 
 .service-label {
@@ -439,6 +445,7 @@ p {
 
 .profile-copy > p {
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .split > * {
@@ -453,6 +460,21 @@ p {
 .soft-image {
   min-height: 500px;
   box-shadow: var(--shadow);
+}
+
+.profile-photo {
+  align-items: stretch;
+  justify-content: stretch;
+  background: var(--paper);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  object-position: center 58%;
+  display: block;
 }
 
 .profile-list {
@@ -711,6 +733,7 @@ details p {
   margin-right: auto;
   margin-left: auto;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .contact.compact {
@@ -851,10 +874,34 @@ details p {
     justify-self: stretch;
   }
 
+  .service-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(250px, 78vw);
+    grid-template-columns: none;
+    max-width: none;
+    margin-right: calc(clamp(20px, 5vw, 70px) * -1);
+    margin-left: calc(clamp(20px, 5vw, 70px) * -1);
+    padding: 0 clamp(20px, 5vw, 70px) 10px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-grid .service-card {
+    min-height: 240px;
+    scroll-snap-align: start;
+  }
+
   .card-grid,
   .price-list,
   .voice-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: none;
   }
 
   .flow-list li {
@@ -887,8 +934,12 @@ details p {
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 25px;
     line-height: 1.34;
+  }
+
+  .hero .eyebrow {
+    font-size: 10px;
   }
 
   h2 {
@@ -952,6 +1003,14 @@ details p {
   .voice-grid blockquote {
     min-height: auto;
     padding: 25px 22px;
+  }
+
+  .service-grid {
+    grid-auto-columns: minmax(236px, 82vw);
+    margin-right: -24px;
+    margin-left: -24px;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 
   .soft-image {
