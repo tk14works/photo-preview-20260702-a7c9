@@ -340,6 +340,14 @@ p {
   margin-left: auto;
 }
 
+.service-carousel {
+  position: relative;
+}
+
+.carousel-button {
+  display: none;
+}
+
 .service-card {
   min-height: 260px;
 }
@@ -889,16 +897,69 @@ details p {
   .service-grid {
     --service-card-width: min(420px, 80vw);
     display: flex;
-    width: 100vw;
+    grid-column: 1 / -1;
+    width: 100%;
     max-width: none;
-    margin-right: calc(clamp(20px, 5vw, 70px) * -1);
-    margin-left: calc(clamp(20px, 5vw, 70px) * -1);
+    margin-right: 0;
+    margin-left: 0;
     padding: 0 calc((100vw - var(--service-card-width)) / 2) 10px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: calc((100vw - var(--service-card-width)) / 2);
     -webkit-overflow-scrolling: touch;
+  }
+
+  .service-carousel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) repeat(2, 38px) minmax(0, 1fr);
+    justify-content: center;
+    gap: 14px 12px;
+    width: 100vw;
+    margin-right: calc(clamp(20px, 5vw, 70px) * -1);
+    margin-left: calc(clamp(20px, 5vw, 70px) * -1);
+  }
+
+  .carousel-button {
+    display: inline-flex;
+    grid-row: 2;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    background: var(--honey);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    box-shadow: 0 12px 28px rgba(79, 70, 66, 0.12);
+  }
+
+  .carousel-button-prev {
+    grid-column: 2;
+  }
+
+  .carousel-button-next {
+    grid-column: 3;
+  }
+
+  .carousel-button span {
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--ink);
+    border-right: 2px solid var(--ink);
+  }
+
+  .carousel-button-prev span {
+    transform: translateX(2px) rotate(-135deg);
+  }
+
+  .carousel-button-next span {
+    transform: translateX(-2px) rotate(45deg);
+  }
+
+  .carousel-button:disabled {
+    pointer-events: none;
+    opacity: 0.18;
   }
 
   .service-grid .service-card {
@@ -1018,8 +1079,6 @@ details p {
   .service-grid {
     --service-card-width: min(316px, 80vw);
     grid-auto-columns: var(--service-card-width);
-    margin-right: -24px;
-    margin-left: -24px;
     padding-right: calc((100vw - var(--service-card-width)) / 2);
     padding-left: calc((100vw - var(--service-card-width)) / 2);
     scroll-padding-inline: calc((100vw - var(--service-card-width)) / 2);
@@ -1027,6 +1086,10 @@ details p {
 
   .soft-image {
     min-height: 360px;
+  }
+
+  .profile-photo {
+    min-height: 0;
   }
 
   .mini-gallery {
