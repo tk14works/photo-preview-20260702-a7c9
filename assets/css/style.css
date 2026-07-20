@@ -463,15 +463,17 @@ p {
 }
 
 .profile-photo {
+  position: relative;
   align-items: stretch;
   justify-content: stretch;
   background: var(--paper);
 }
 
 .profile-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 500px;
   object-fit: cover;
   object-position: center 58%;
   display: block;
@@ -736,6 +738,14 @@ details p {
   overflow-wrap: anywhere;
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 34px;
+}
+
 .contact.compact {
   margin-top: 28px;
 }
@@ -877,21 +887,22 @@ details p {
   .service-grid {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(250px, 78vw);
+    grid-auto-columns: minmax(274px, 80vw);
     grid-template-columns: none;
     max-width: none;
     margin-right: calc(clamp(20px, 5vw, 70px) * -1);
     margin-left: calc(clamp(20px, 5vw, 70px) * -1);
-    padding: 0 clamp(20px, 5vw, 70px) 10px;
+    padding: 0 calc((100vw - min(80vw, 420px)) / 2) 10px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline proximity;
+    scroll-padding-inline: calc((100vw - min(80vw, 420px)) / 2);
     -webkit-overflow-scrolling: touch;
   }
 
   .service-grid .service-card {
     min-height: 240px;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
   }
 
   .card-grid,
@@ -1006,11 +1017,12 @@ details p {
   }
 
   .service-grid {
-    grid-auto-columns: minmax(236px, 82vw);
+    grid-auto-columns: minmax(274px, 80vw);
     margin-right: -24px;
     margin-left: -24px;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: 39px;
+    padding-left: 39px;
+    scroll-padding-inline: 39px;
   }
 
   .soft-image {
