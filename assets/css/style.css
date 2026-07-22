@@ -232,10 +232,6 @@ p {
   box-shadow: 0 12px 24px rgba(79, 70, 66, 0.06);
 }
 
-.hero-language-link-mobile {
-  display: none;
-}
-
 .button.primary {
   color: var(--ink);
   background: var(--honey);
@@ -1492,18 +1488,7 @@ details p {
   }
 
   .hero-visual {
-    order: -2;
     min-height: 0;
-  }
-
-  .hero-language-link-desktop {
-    display: none;
-  }
-
-  .hero-language-link-mobile {
-    order: -1;
-    display: inline-flex;
-    justify-self: center;
   }
 
   .main-photo {
@@ -1739,14 +1724,6 @@ details p {
   .hero-language-link {
     margin-top: 24px;
     font-size: 14px;
-  }
-
-  .hero-language-link-mobile {
-    width: auto;
-    max-width: min(100%, 316px);
-    margin-top: -4px;
-    margin-bottom: 4px;
-    padding: 8px 17px;
   }
 
   #service .section-heading,
