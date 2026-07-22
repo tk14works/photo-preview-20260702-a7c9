@@ -561,6 +561,15 @@ p {
   max-width: 560px;
 }
 
+.profile-name {
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .profile-copy > p {
   color: var(--muted);
   overflow-wrap: anywhere;
@@ -753,6 +762,10 @@ p {
   background: rgba(255, 253, 248, 0.72);
   border: 1px solid var(--soft-line);
   border-radius: var(--radius);
+}
+
+.preparation-card-mobile {
+  display: none;
 }
 
 .preparation-card h3 {
@@ -1310,6 +1323,14 @@ details p {
   .preparation-card {
     min-height: auto;
     padding: 24px 22px;
+  }
+
+  .preparation-card-desktop {
+    display: none;
+  }
+
+  .preparation-card-mobile {
+    display: block;
   }
 
   .preparation-card h3 {
