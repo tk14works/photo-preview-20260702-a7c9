@@ -1337,6 +1337,11 @@ details p {
     font-size: 21px;
   }
 
+  .profile-name {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+
   .service-card,
   .price-list article,
   .voice-card {
