@@ -226,6 +226,26 @@ p {
   background: var(--paper);
 }
 
+.button.line-button,
+.button.instagram-button,
+.button.menu-detail-button {
+  color: #fffdf8;
+  border-color: transparent;
+  box-shadow: 0 14px 28px rgba(79, 70, 66, 0.13);
+}
+
+.button.line-button {
+  background: #06c755;
+}
+
+.button.instagram-button {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 48%, #8134af 100%);
+}
+
+.button.menu-detail-button {
+  background: #8b6478;
+}
+
 .hero-visual {
   position: relative;
   min-height: 0;
@@ -1376,7 +1396,11 @@ details p {
     margin-left: auto;
   }
 
-  .hero-actions {
+  .hero-actions,
+  .contact-actions {
+    max-width: 316px;
+    margin-right: auto;
+    margin-left: auto;
     justify-content: center;
   }
 
