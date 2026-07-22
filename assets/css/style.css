@@ -272,7 +272,7 @@ p {
 
 @media (min-width: 901px) {
   .hero-photo {
-    animation: heroPhotoReveal 2.8s ease-out both;
+    animation: heroPhotoReveal 4s ease-out both;
   }
 
   .hero-welcome {
@@ -289,7 +289,7 @@ p {
     text-align: center;
     pointer-events: none;
     background: rgba(255, 253, 248, 0.34);
-    animation: heroWelcomeFade 2.8s ease-out forwards;
+    animation: heroWelcomeFade 4s ease-out forwards;
   }
 
   .hero-welcome p {
@@ -314,7 +314,7 @@ p {
 
 @keyframes heroPhotoReveal {
   0%,
-  42% {
+  55% {
     filter: brightness(1.08) saturate(0.76) contrast(0.9);
   }
 
@@ -325,7 +325,7 @@ p {
 
 @keyframes heroWelcomeFade {
   0%,
-  42% {
+  55% {
     opacity: 1;
   }
 
