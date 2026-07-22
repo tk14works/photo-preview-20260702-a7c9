@@ -349,7 +349,26 @@ p {
 }
 
 .service-card {
-  min-height: 260px;
+  min-height: 360px;
+}
+
+.service-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  margin-bottom: 22px;
+  color: rgba(79, 70, 66, 0.38);
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  background:
+    linear-gradient(135deg, rgba(246, 233, 168, 0.34), rgba(168, 184, 154, 0.26)),
+    repeating-linear-gradient(45deg, rgba(255, 253, 248, 0.75) 0 12px, rgba(139, 100, 120, 0.055) 12px 24px);
+  border: 1px solid var(--soft-line);
+  border-radius: var(--radius);
 }
 
 .service-label {
@@ -358,6 +377,15 @@ p {
   font-family: var(--serif);
   font-size: 13px;
   letter-spacing: 0.08em;
+}
+
+.service-card-price {
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .tag-list {
