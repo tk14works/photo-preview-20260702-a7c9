@@ -1161,6 +1161,40 @@ details p {
   overflow-wrap: anywhere;
 }
 
+.menu-detail-list {
+  display: grid;
+  gap: 0;
+  max-width: 720px;
+  margin: 26px 0 0;
+}
+
+.menu-detail-list div {
+  display: grid;
+  grid-template-columns: minmax(96px, 0.18fr) minmax(0, 1fr);
+  gap: 18px;
+  padding: 15px 0;
+  border-top: 1px solid var(--soft-line);
+}
+
+.menu-detail-list div:last-child {
+  border-bottom: 1px solid var(--soft-line);
+}
+
+.menu-detail-list dt {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.menu-detail-list dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
 .menu-info-grid,
 .menu-plan-grid,
 .menu-option-list {
@@ -1241,6 +1275,10 @@ details p {
   color: var(--muted);
   font-size: 14px;
   line-height: 2;
+}
+
+.menu-contact .contact-actions {
+  margin-top: 28px;
 }
 
 @media (max-width: 900px) {
@@ -1702,6 +1740,12 @@ details p {
     padding: 24px 22px;
   }
 
+  .menu-detail-list div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+    padding: 14px 0;
+  }
+
   .menu-info-grid,
   .menu-info-grid.compact,
   .menu-plan-grid,
@@ -1712,29 +1756,6 @@ details p {
   .menu-plan-card h3 {
     min-height: auto;
   }
-
-  .menu-option-row {
-    display: flex;
-    width: calc(100% + 44px);
-    margin-right: -22px;
-    margin-left: -22px;
-    padding: 0 22px 8px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: inline mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .menu-option-row::-webkit-scrollbar {
-    display: none;
-  }
-
-  .menu-option-card {
-    flex: 0 0 min(286px, 78vw);
-    scroll-snap-align: center;
-  }
-
   .gallery-page {
     grid-template-columns: 1fr;
     grid-auto-rows: 220px;
