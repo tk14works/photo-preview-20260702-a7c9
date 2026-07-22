@@ -218,9 +218,9 @@ p {
 
 .hero-language-link {
   display: inline-flex;
-  margin-top: 16px;
+  margin-top: 26px;
   color: var(--plum);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.6;
   border-bottom: 1px solid rgba(139, 100, 120, 0.36);
@@ -1415,6 +1415,12 @@ details p {
   margin-top: 28px;
 }
 
+.english-contact-actions {
+  width: min(100%, 280px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (max-width: 900px) {
   body {
     font-size: 14px;
@@ -1710,7 +1716,8 @@ details p {
   }
 
   .hero-language-link {
-    margin-top: 14px;
+    margin-top: 24px;
+    font-size: 14px;
   }
 
   #service .section-heading,
