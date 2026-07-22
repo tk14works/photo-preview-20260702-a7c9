@@ -15,32 +15,39 @@ if (navToggle && siteNav) {
   });
 }
 
-const serviceCarousel = document.querySelector("[data-service-carousel]");
-const servicePrev = document.querySelector("[data-carousel-prev]");
-const serviceNext = document.querySelector("[data-carousel-next]");
+const setupCardCarousel = (carouselSelector, prevSelector, nextSelector, cardSelector) => {
+  const carousel = document.querySelector(carouselSelector);
+  const prev = document.querySelector(prevSelector);
+  const next = document.querySelector(nextSelector);
 
-if (serviceCarousel && servicePrev && serviceNext) {
-  const updateServiceButtons = () => {
-    const maxScroll = serviceCarousel.scrollWidth - serviceCarousel.clientWidth;
-    servicePrev.disabled = serviceCarousel.scrollLeft <= 4;
-    serviceNext.disabled = serviceCarousel.scrollLeft >= maxScroll - 4;
+  if (!carousel || !prev || !next) {
+    return;
+  }
+
+  const updateButtons = () => {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    prev.disabled = carousel.scrollLeft <= 4;
+    next.disabled = carousel.scrollLeft >= maxScroll - 4;
   };
 
-  const scrollServiceCards = (direction) => {
-    const card = serviceCarousel.querySelector(".service-card");
-    const styles = window.getComputedStyle(serviceCarousel);
+  const scrollCards = (direction) => {
+    const card = carousel.querySelector(cardSelector);
+    const styles = window.getComputedStyle(carousel);
     const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
-    const distance = card ? card.getBoundingClientRect().width + gap : serviceCarousel.clientWidth * 0.8;
+    const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.8;
 
-    serviceCarousel.scrollBy({
+    carousel.scrollBy({
       left: direction * distance,
       behavior: "smooth",
     });
   };
 
-  servicePrev.addEventListener("click", () => scrollServiceCards(-1));
-  serviceNext.addEventListener("click", () => scrollServiceCards(1));
-  serviceCarousel.addEventListener("scroll", updateServiceButtons, { passive: true });
-  window.addEventListener("resize", updateServiceButtons);
-  updateServiceButtons();
-}
+  prev.addEventListener("click", () => scrollCards(-1));
+  next.addEventListener("click", () => scrollCards(1));
+  carousel.addEventListener("scroll", updateButtons, { passive: true });
+  window.addEventListener("resize", updateButtons);
+  updateButtons();
+};
+
+setupCardCarousel("[data-service-carousel]", "[data-carousel-prev]", "[data-carousel-next]", ".service-card");
+setupCardCarousel("[data-voice-carousel]", "[data-voice-prev]", "[data-voice-next]", ".voice-card");

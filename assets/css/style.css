@@ -397,7 +397,7 @@ p {
 
 .service-card,
 .price-list article,
-.voice-grid blockquote {
+.voice-card {
   min-height: 204px;
   padding: 28px 26px;
   background: rgba(255, 253, 248, 0.68);
@@ -408,7 +408,7 @@ p {
 .service-card p,
 .price-list p,
 .flow-list p,
-.voice-grid blockquote {
+.voice-card p {
   color: var(--muted);
   font-size: 14px;
   line-height: 2;
@@ -729,9 +729,15 @@ p {
   font-weight: 600;
 }
 
+.voice-carousel {
+  position: relative;
+}
+
 .voice-grid {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 920px;
+  gap: 16px;
+  max-width: 980px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -741,12 +747,28 @@ p {
   background: var(--paper);
 }
 
-.voice-grid blockquote {
+.voice-card {
   margin: 0;
-  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
   font-family: var(--serif);
-  font-size: 17px;
-  line-height: 2;
+}
+
+.voice-card p {
+  flex: 1;
+}
+
+.voice-category {
+  padding-top: 14px;
+  margin-top: 20px;
+  color: var(--plum);
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  border-top: 1px solid var(--soft-line);
 }
 
 .faq {
@@ -1016,10 +1038,17 @@ details p {
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: calc((100vw - var(--service-card-width)) / 2);
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
 
-  .service-carousel {
+  .service-grid::-webkit-scrollbar,
+  .voice-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-carousel,
+  .voice-carousel {
     display: grid;
     grid-template-columns: minmax(0, 1fr) repeat(2, 38px) minmax(0, 1fr);
     justify-content: center;
@@ -1078,9 +1107,33 @@ details p {
     scroll-snap-stop: always;
   }
 
+  .voice-grid {
+    --voice-card-width: min(420px, 80vw);
+    display: flex;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 calc((100vw - var(--voice-card-width)) / 2) 10px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: calc((100vw - var(--voice-card-width)) / 2);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .voice-grid .voice-card {
+    flex: 0 0 var(--voice-card-width);
+    min-height: 330px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
   .card-grid,
   .price-list,
-  .voice-grid {
+  .voice-grid:not([data-voice-carousel]) {
     grid-template-columns: 1fr;
   }
 
@@ -1191,6 +1244,13 @@ details p {
     padding-right: calc((100vw - var(--service-card-width)) / 2);
     padding-left: calc((100vw - var(--service-card-width)) / 2);
     scroll-padding-inline: calc((100vw - var(--service-card-width)) / 2);
+  }
+
+  .voice-grid {
+    --voice-card-width: min(316px, 80vw);
+    padding-right: calc((100vw - var(--voice-card-width)) / 2);
+    padding-left: calc((100vw - var(--voice-card-width)) / 2);
+    scroll-padding-inline: calc((100vw - var(--voice-card-width)) / 2);
   }
 
   .soft-image {
