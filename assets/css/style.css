@@ -233,15 +233,15 @@ p {
 }
 
 .button.line-button {
-  color: #3f6f55;
-  background: #d9f2df;
-  border-color: rgba(123, 160, 129, 0.46);
+  color: #2f6849;
+  background: #bfe8c9;
+  border-color: rgba(83, 143, 98, 0.48);
 }
 
 .button.instagram-button {
-  color: #8b6478;
-  background: linear-gradient(135deg, #fde6cd 0%, #f6cfda 50%, #ead8ef 100%);
-  border-color: rgba(139, 100, 120, 0.24);
+  color: #83506d;
+  background: linear-gradient(135deg, #f9d2b4 0%, #efadc8 50%, #d8b9e6 100%);
+  border-color: rgba(139, 100, 120, 0.3);
 }
 
 .button.menu-detail-button {
