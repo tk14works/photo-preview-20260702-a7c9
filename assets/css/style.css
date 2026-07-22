@@ -229,21 +229,25 @@ p {
 .button.line-button,
 .button.instagram-button,
 .button.menu-detail-button {
-  color: #fffdf8;
-  border-color: transparent;
-  box-shadow: 0 14px 28px rgba(79, 70, 66, 0.13);
+  box-shadow: 0 12px 24px rgba(79, 70, 66, 0.1);
 }
 
 .button.line-button {
-  background: #06c755;
+  color: #3f6f55;
+  background: #d9f2df;
+  border-color: rgba(123, 160, 129, 0.46);
 }
 
 .button.instagram-button {
-  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 48%, #8134af 100%);
+  color: #8b6478;
+  background: linear-gradient(135deg, #fde6cd 0%, #f6cfda 50%, #ead8ef 100%);
+  border-color: rgba(139, 100, 120, 0.24);
 }
 
 .button.menu-detail-button {
-  background: #8b6478;
+  color: var(--ink);
+  background: var(--honey);
+  border-color: var(--line);
 }
 
 .hero-visual {
