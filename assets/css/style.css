@@ -1060,18 +1060,78 @@ details p {
 
 .menu-detail-page {
   display: grid;
-  gap: 22px;
+  gap: 28px;
   max-width: none;
+  padding-top: 0;
   background: var(--cream);
 }
 
-.menu-detail-block {
+.menu-tab-wrap {
+  position: sticky;
+  top: 72px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100vw;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  padding: 14px clamp(20px, 5vw, 70px);
+  overflow-x: auto;
+  background: rgba(251, 250, 243, 0.94);
+  border-top: 1px solid var(--soft-line);
+  border-bottom: 1px solid var(--soft-line);
+  backdrop-filter: blur(16px);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-tab-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-tab {
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 9px 22px;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--soft-line);
+  border-radius: 999px;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.menu-tab.is-active {
+  color: var(--ink);
+  background: var(--honey);
+  border-color: var(--line);
+  box-shadow: 0 12px 24px rgba(79, 70, 66, 0.08);
+}
+
+.menu-panel-stack {
+  width: min(100%, 1040px);
+  margin: 0 auto;
+}
+
+.menu-panel {
+  display: grid;
+  gap: 28px;
+  min-width: 0;
+}
+
+.menu-panel[hidden] {
+  display: none;
+}
+
+.menu-detail-intro {
   display: grid;
   grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
   gap: clamp(24px, 4vw, 48px);
   align-items: start;
-  width: min(100%, 1040px);
-  margin: 0 auto;
+  min-width: 0;
   padding: 28px;
   background: var(--paper);
   border: 1px solid var(--soft-line);
@@ -1098,17 +1158,39 @@ details p {
 .menu-detail-copy > p:not(.service-label, .service-card-price) {
   max-width: 640px;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
-.menu-option-row {
+.menu-info-grid,
+.menu-plan-grid,
+.menu-option-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 22px;
 }
 
-.menu-option-card {
-  min-height: 170px;
+.menu-info-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.menu-info-grid.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.menu-detail-section {
+  padding: 28px;
+  background: var(--paper);
+  border: 1px solid var(--soft-line);
+  border-radius: var(--radius);
+}
+
+.menu-detail-section > h2 {
+  margin-bottom: 22px;
+}
+
+.menu-option-card,
+.menu-plan-card {
+  min-width: 0;
   padding: 20px 18px;
   background: var(--cream);
   border: 1px solid var(--soft-line);
@@ -1120,6 +1202,42 @@ details p {
 }
 
 .menu-option-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.menu-plan-card h3 {
+  min-height: 54px;
+  font-size: 19px;
+}
+
+.menu-plan-price {
+  margin-bottom: 10px;
+  color: var(--plum);
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.menu-plan-card ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.menu-plan-card li {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.menu-note {
+  margin-top: 18px;
   color: var(--muted);
   font-size: 14px;
   line-height: 2;
@@ -1338,8 +1456,19 @@ details p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .menu-detail-block {
+  .menu-detail-intro {
     grid-template-columns: 1fr;
+  }
+
+  .menu-tab-wrap {
+    justify-content: flex-start;
+  }
+
+  .menu-info-grid,
+  .menu-info-grid.compact,
+  .menu-plan-grid,
+  .menu-option-list {
+    grid-template-columns: 1fr 1fr;
   }
 
   .preparation-grid {
@@ -1552,8 +1681,36 @@ details p {
     padding: 38px 22px;
   }
 
-  .menu-detail-block {
+  .menu-detail-page {
+    padding-top: 0;
+  }
+
+  .menu-tab-wrap {
+    top: 66px;
+    gap: 8px;
+    padding: 12px 24px;
+  }
+
+  .menu-tab {
+    min-height: 38px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .menu-detail-intro,
+  .menu-detail-section {
     padding: 24px 22px;
+  }
+
+  .menu-info-grid,
+  .menu-info-grid.compact,
+  .menu-plan-grid,
+  .menu-option-list {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-plan-card h3 {
+    min-height: auto;
   }
 
   .menu-option-row {

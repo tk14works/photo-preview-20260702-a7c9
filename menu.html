@@ -6,7 +6,7 @@
     <meta name="description" content="harika photoの撮影メニュー詳細ページです。プラン内容やオプションを確認できます。" />
     <meta name="robots" content="noindex, nofollow, noarchive" />
     <title>撮影メニュー詳細 | harika photo</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=instagram-solid-20260723" />
+    <link rel="stylesheet" href="assets/css/style.css?v=menu-tabs-20260723" />
   </head>
   <body>
     <header class="site-header">
@@ -20,65 +20,131 @@
       <section class="page-hero menu-page-hero">
         <p class="eyebrow">Service Detail</p>
         <h1>撮影メニューの詳細</h1>
-        <p>トップページでは伝えきれない撮影内容やオプションを、メニューごとに確認できるページです。正式な料金・オプション内容は、お客様資料に合わせて差し替え予定です。</p>
+        <p>トップページでは伝えきれない撮影内容やオプションを、メニューごとに確認できるページです。気になる撮影メニューを選んで、料金や内容をご確認ください。</p>
       </section>
-      <section class="section menu-detail-page" aria-label="撮影メニュー詳細一覧">
-        <article class="menu-detail-block" id="location">
-          <div class="menu-detail-photo">PHOTO</div>
-          <div class="menu-detail-copy">
-            <p class="service-label">Location</p>
-            <h2>ロケーション</h2>
-            <p class="service-card-price">¥10,000</p>
-            <p>沖縄の海や自然の中で、旅の空気も家族の表情も一緒に残します。</p>
-            <div class="menu-option-row">
-              <article class="menu-option-card"><h3>基本内容</h3><p>撮影時間・納品枚数など、正式内容を確認後に記載します。</p></article>
-              <article class="menu-option-card"><h3>追加オプション</h3><p>延長・人数追加・場所追加など、必要な項目を整理して記載します。</p></article>
-              <article class="menu-option-card"><h3>注意事項</h3><p>天候判断や移動時間など、事前に伝えたい内容をまとめます。</p></article>
+      <section class="section menu-detail-page" aria-label="撮影メニュー詳細">
+        <div class="menu-tab-wrap" role="tablist" aria-label="撮影メニューを選択">
+          <button class="menu-tab is-active" type="button" role="tab" data-menu-tab="location" aria-controls="location-panel" aria-selected="true">ロケーション</button>
+          <button class="menu-tab" type="button" role="tab" data-menu-tab="studio" aria-controls="studio-panel" aria-selected="false">スタジオ</button>
+          <button class="menu-tab" type="button" role="tab" data-menu-tab="pet" aria-controls="pet-panel" aria-selected="false">ペット</button>
+          <button class="menu-tab" type="button" role="tab" data-menu-tab="shichigosan" aria-controls="shichigosan-panel" aria-selected="false">七五三</button>
+        </div>
+        <div class="menu-panel-stack">
+          <article class="menu-panel is-active" id="location-panel" role="tabpanel" data-menu-panel="location">
+            <div class="menu-detail-intro">
+              <div class="menu-detail-photo">PHOTO</div>
+              <div class="menu-detail-copy">
+                <p class="service-label">Location</p>
+                <h2>ロケーション撮影</h2>
+                <p>お好きな公園、ビーチ、ご自宅など、ご希望の場所へ伺って撮影します。沖縄の海や自然の中で、旅の空気も家族の表情も一緒に残します。</p>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="menu-detail-block" id="studio">
-          <div class="menu-detail-photo">PHOTO</div>
-          <div class="menu-detail-copy">
-            <p class="service-label">Studio</p>
-            <h2>スタジオ</h2>
-            <p class="service-card-price">¥10,000</p>
-            <p>お子さまの記念日や成長の節目を、落ち着いた空間で丁寧に撮影します。</p>
-            <div class="menu-option-row">
-              <article class="menu-option-card"><h3>基本内容</h3><p>撮影時間・納品枚数など、正式内容を確認後に記載します。</p></article>
-              <article class="menu-option-card"><h3>追加オプション</h3><p>背景・小物・衣装など、メニューごとの選択肢を整理します。</p></article>
-              <article class="menu-option-card"><h3>おすすめ</h3><p>記念日や年齢に合わせた組み合わせを記載できます。</p></article>
+            <div class="menu-info-grid">
+              <article class="menu-option-card"><h3>日程</h3><p>お好きな日程でお申し込みいただけます。ご希望に添えない場合もございます。</p></article>
+              <article class="menu-option-card"><h3>場所</h3><p>お好きな公園、ビーチ、ご自宅など、ご希望の場所へ伺っての撮影が可能です。別途撮影許可が必要な場合がございます。</p></article>
+              <article class="menu-option-card"><h3>出張費</h3><p>コストコ南城倉庫店より10キロ圏内は無料でご案内しております。それ以降のエリアは10キロごとに＋1,000円をお願いしております。</p></article>
+              <article class="menu-option-card"><h3>納品方法</h3><p>WEBアルバムにて高画質のまま全データをお渡しいたします。URLより保存をお願いいたします。保存期間は1か月です。</p></article>
+              <article class="menu-option-card"><h3>納期</h3><p>撮影後2〜3週間でお渡しいたします。</p></article>
             </div>
-          </div>
-        </article>
-        <article class="menu-detail-block" id="pet">
-          <div class="menu-detail-photo">PHOTO</div>
-          <div class="menu-detail-copy">
-            <p class="service-label">Pet</p>
-            <h2>ペット</h2>
-            <p class="service-card-price">¥10,000</p>
-            <p>大切な家族の一員であるペットとの自然な時間を、やさしく写真に残します。</p>
-            <div class="menu-option-row">
-              <article class="menu-option-card"><h3>基本内容</h3><p>撮影時間・納品枚数など、正式内容を確認後に記載します。</p></article>
-              <article class="menu-option-card"><h3>追加オプション</h3><p>家族同伴・場所追加など、ペット撮影ならではの内容を整理します。</p></article>
-              <article class="menu-option-card"><h3>準備</h3><p>リード・おやつ・暑さ対策など、撮影前に必要な内容を記載できます。</p></article>
+            <div class="menu-detail-section">
+              <p class="eyebrow">Plan</p>
+              <h2>料金プラン</h2>
+              <div class="menu-plan-grid">
+                <article class="menu-plan-card"><h3>データプラン</h3><p class="menu-plan-price">20,000円（税込）</p><ul><li>平日は2,000円割引</li><li>所要時間 60〜90分</li><li>納品枚数 全データ（50カット）</li></ul></article>
+                <article class="menu-plan-card"><h3>カタチに残る パネルプラン</h3><p class="menu-plan-price">29,000円（税込）</p><ul><li>平日は2,000円割引</li><li>所要時間 60〜90分</li><li>納品枚数 全データ（70カット）</li><li>12,000円分のフォトグッズ付き</li></ul></article>
+                <article class="menu-plan-card"><h3>その日に戻れる プレミアムプラン</h3><p class="menu-plan-price">38,000円（税込）</p><ul><li>平日は2,000円割引</li><li>所要時間 60〜90分</li><li>納品枚数 全データ（70カット）</li><li>22,000円分のフォトグッズ付き</li></ul></article>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="menu-detail-block" id="shichigosan">
-          <div class="menu-detail-photo">PHOTO</div>
-          <div class="menu-detail-copy">
-            <p class="service-label">Shichi-Go-San</p>
-            <h2>七五三</h2>
-            <p class="service-card-price">¥10,000</p>
-            <p>受け継いだお着物や晴れの日の表情を、思い出に残る一日に整えます。</p>
-            <div class="menu-option-row">
-              <article class="menu-option-card"><h3>基本内容</h3><p>撮影時間・納品枚数など、正式内容を確認後に記載します。</p></article>
-              <article class="menu-option-card"><h3>着物サポート</h3><p>お直しや着付けに関する内容を、資料に合わせて整理します。</p></article>
-              <article class="menu-option-card"><h3>追加オプション</h3><p>ご家族撮影・兄弟撮影など、追加できる内容を記載します。</p></article>
+          </article>
+          <article class="menu-panel" id="studio-panel" role="tabpanel" data-menu-panel="studio" hidden>
+            <div class="menu-detail-intro">
+              <div class="menu-detail-photo">PHOTO</div>
+              <div class="menu-detail-copy">
+                <p class="service-label">Studio</p>
+                <h2>スタジオ撮影</h2>
+                <p>お子さまの記念日や成長の節目を、落ち着いた空間で丁寧に撮影します。オプションを組み合わせて、今だけの表情を残せます。</p>
+              </div>
             </div>
-          </div>
-        </article>
+            <div class="menu-info-grid compact">
+              <article class="menu-option-card"><h3>追加料金</h3><p>土・日・祝日は＋5,000円。生花での撮影は＋5,000円です。</p></article>
+            </div>
+            <div class="menu-detail-section">
+              <p class="eyebrow">Plan</p>
+              <h2>料金プラン</h2>
+              <div class="menu-plan-grid">
+                <article class="menu-plan-card"><h3>データプラン</h3><p class="menu-plan-price">20,000円（税込）</p><ul><li>所要時間 60分</li><li>納品データ 30カット</li></ul></article>
+                <article class="menu-plan-card"><h3>パネルプラン</h3><p class="menu-plan-price">29,000円（税込）</p><ul><li>所要時間 60分</li><li>納品データ 50カット</li><li>③〜⑤のオプションお1つ無料</li><li>10,000円分のフォトグッズ付き</li></ul></article>
+                <article class="menu-plan-card"><h3>プレミアムプラン</h3><p class="menu-plan-price">38,000円（税込）</p><ul><li>スタジオ＋ロケーション（ビーチ）</li><li>同じ日程でアラハビーチへ移動、または別日程でアラハビーチや百名ビーチへご案内も可能です。</li><li>所要時間 各60分</li><li>納品データ 70カット保証</li><li>①〜⑤のオプションお1つ無料</li><li>15,000円分のフォトグッズ付き</li></ul></article>
+              </div>
+            </div>
+            <div class="menu-detail-section">
+              <p class="eyebrow">Option</p>
+              <h2>オプション</h2>
+              <div class="menu-option-list">
+                <article class="menu-option-card"><h3>BOX PHOTO</h3><p>5,000円。お座り〜4歳前後のお子さま向けです。</p></article>
+                <article class="menu-option-card"><h3>ミルクバス</h3><p>5,000円。お座り〜2歳頃のお子さま向けです。</p></article>
+                <article class="menu-option-card"><h3>スマッシュケーキ（持込み）</h3><p>3,000円。エプロンの貸し出しがあります。</p></article>
+                <article class="menu-option-card"><h3>スマッシュおにぎり（持込み）</h3><p>3,000円。エプロンの貸し出しがあります。</p></article>
+                <article class="menu-option-card"><h3>スマッシュパン</h3><p>3,000円。別途ご注文も可能です。エプロンの貸し出しがあります。</p></article>
+              </div>
+              <p class="menu-note">等身大アルバム撮影をご希望の方は事前にお知らせください。たんかゆーえー、お気に入りのおもちゃなどでの撮影は、お持ち込みでどのプランでも撮影可能です。</p>
+            </div>
+          </article>
+          <article class="menu-panel" id="pet-panel" role="tabpanel" data-menu-panel="pet" hidden>
+            <div class="menu-detail-intro">
+              <div class="menu-detail-photo">PHOTO</div>
+              <div class="menu-detail-copy">
+                <p class="service-label">Pet</p>
+                <h2>ペット撮影</h2>
+                <p>大切な家族の一員であるペットとの自然な時間を、やさしく写真に残します。ご家族さまもわんちゃんも安心して過ごせる空間づくりを大切にしています。</p>
+              </div>
+            </div>
+            <div class="menu-info-grid compact">
+              <article class="menu-option-card"><h3>追加料金</h3><p>土・日・祝日は＋5,000円。生花での撮影は＋5,000円です。</p></article>
+            </div>
+            <div class="menu-detail-section">
+              <p class="eyebrow">Plan</p>
+              <h2>料金プラン</h2>
+              <div class="menu-plan-grid">
+                <article class="menu-plan-card"><h3>データプラン</h3><p class="menu-plan-price">20,000円（税込）</p><ul><li>所要時間 60分</li><li>納品データ 30カット</li></ul></article>
+                <article class="menu-plan-card"><h3>パネルプラン</h3><p class="menu-plan-price">29,000円（税込）</p><ul><li>所要時間 60分</li><li>納品データ 50カット</li><li>②〜③のオプションお1つ無料</li><li>10,000円分のフォトグッズ付き</li></ul></article>
+                <article class="menu-plan-card"><h3>プレミアムプラン</h3><p class="menu-plan-price">38,000円（税込）</p><ul><li>スタジオ＋ロケーション（アラハビーチ）</li><li>所要時間 各60分</li><li>納品データ 70カット保証</li><li>①〜③のオプションお1つ無料</li><li>15,000円分のフォトグッズ付き</li></ul></article>
+              </div>
+            </div>
+            <div class="menu-detail-section">
+              <p class="eyebrow">Option</p>
+              <h2>オプション</h2>
+              <div class="menu-option-list">
+                <article class="menu-option-card"><h3>季節の生花での撮影</h3><p>5,000円。季節感のあるお写真を残せます。</p></article>
+                <article class="menu-option-card"><h3>飛び出しフォト</h3><p>5,000円。背景紙に切り込みを入れ、お顔や手足などのパーツを撮影します。主役が増えるごとに＋3,000円です。</p></article>
+                <article class="menu-option-card"><h3>BOX PHOTO</h3><p>5,000円。約60×60cmの箱に入って撮影し、9カットを1枚に合成します。2パターン作成は＋3,000円です。</p></article>
+                <article class="menu-option-card"><h3>等身大パネル撮影</h3><p>35,000円。撮影したお写真は、約30cmの正方形3面見開きアルバムに印刷して郵送いたします。パネルプランは-10,000円、プレミアムプランは-15,000円です。</p></article>
+              </div>
+              <p class="menu-note">スマッシュケーキなどはご持参いただければ無料で撮影いたします。お気に入りのおもちゃやおやつなどもお持ちください。</p>
+            </div>
+            <div class="menu-detail-section">
+              <p class="eyebrow">お願い</p>
+              <h2>撮影時のお願い</h2>
+              <div class="menu-info-grid compact">
+                <article class="menu-option-card"><h3>マナーベルトの着用</h3><p>スタジオ内を清潔に保つため、撮影中はマナーベルト（マナーパンツ）の着用をお願いしております。</p></article>
+                <article class="menu-option-card"><h3>ご来店人数</h3><p>畳の空間をできるだけ広く使い、のびのび過ごせるよう、ご来店は大人2名様、わんちゃん＋お子様3名（匹）までとさせていただきます。</p></article>
+              </div>
+            </div>
+          </article>
+          <article class="menu-panel" id="shichigosan-panel" role="tabpanel" data-menu-panel="shichigosan" hidden>
+            <div class="menu-detail-intro">
+              <div class="menu-detail-photo">PHOTO</div>
+              <div class="menu-detail-copy">
+                <p class="service-label">Shichi-Go-San</p>
+                <h2>七五三</h2>
+                <p>受け継いだお着物や晴れの日の表情を、思い出に残る一日に整えます。詳しい料金や内容は確認中です。</p>
+              </div>
+            </div>
+            <div class="menu-info-grid compact">
+              <article class="menu-option-card"><h3>内容確認中</h3><p>七五三の詳しい撮影内容・料金プラン・着物サポートについては、確認が取れ次第こちらに掲載いたします。ご希望の方はLINEよりお問い合わせください。</p></article>
+            </div>
+          </article>
+        </div>
       </section>
       <section class="contact compact">
         <p class="eyebrow">Contact</p>
@@ -87,6 +153,6 @@
       </section>
     </main>
     <footer class="site-footer"><p>&copy; harika photo</p><a href="index.html">Home</a></footer>
-    <script src="assets/js/main.js?v=voices-20260722b"></script>
+    <script src="assets/js/main.js?v=menu-tabs-20260723"></script>
   </body>
 </html>

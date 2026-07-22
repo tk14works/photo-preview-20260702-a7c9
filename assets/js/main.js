@@ -51,3 +51,34 @@ const setupCardCarousel = (carouselSelector, prevSelector, nextSelector, cardSel
 
 setupCardCarousel("[data-service-carousel]", "[data-carousel-prev]", "[data-carousel-next]", ".service-card");
 setupCardCarousel("[data-voice-carousel]", "[data-voice-prev]", "[data-voice-next]", ".voice-card");
+
+const menuTabs = document.querySelectorAll("[data-menu-tab]");
+const menuPanels = document.querySelectorAll("[data-menu-panel]");
+const menuDetailPage = document.querySelector(".menu-detail-page");
+
+if (menuTabs.length && menuPanels.length) {
+  const activateMenuPanel = (targetId) => {
+    menuTabs.forEach((tab) => {
+      const isActive = tab.dataset.menuTab === targetId;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+    });
+
+    menuPanels.forEach((panel) => {
+      const isActive = panel.dataset.menuPanel === targetId;
+      panel.classList.toggle("is-active", isActive);
+      panel.hidden = !isActive;
+    });
+  };
+
+  menuTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      if (!tab.dataset.menuTab) {
+        return;
+      }
+
+      activateMenuPanel(tab.dataset.menuTab);
+      menuDetailPage?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
