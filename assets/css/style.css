@@ -251,6 +251,7 @@ p {
 }
 
 .main-photo {
+  position: relative;
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
@@ -263,6 +264,86 @@ p {
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.hero-welcome {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .hero-photo {
+    animation: heroPhotoReveal 2.8s ease-out both;
+  }
+
+  .hero-welcome {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px;
+    color: var(--ink);
+    text-align: center;
+    pointer-events: none;
+    background: rgba(255, 253, 248, 0.34);
+    animation: heroWelcomeFade 2.8s ease-out forwards;
+  }
+
+  .hero-welcome p {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 600;
+    line-height: 1.35;
+    text-shadow: 0 1px 18px rgba(255, 253, 248, 0.84);
+  }
+
+  .hero-welcome span {
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: clamp(13px, 1.25vw, 18px);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 16px rgba(255, 253, 248, 0.84);
+  }
+}
+
+@keyframes heroPhotoReveal {
+  0%,
+  42% {
+    filter: brightness(1.08) saturate(0.76) contrast(0.9);
+  }
+
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+}
+
+@keyframes heroWelcomeFade {
+  0%,
+  42% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo,
+  .hero-welcome {
+    animation: none;
+  }
+
+  .hero-welcome {
+    display: none;
+  }
 }
 
 .section {
