@@ -756,10 +756,6 @@ p {
   font-family: var(--serif);
 }
 
-.voice-card p {
-  flex: 1;
-}
-
 .voice-category {
   padding-top: 14px;
   margin-top: 20px;
@@ -1234,7 +1230,7 @@ details p {
 
   .service-card,
   .price-list article,
-  .voice-grid blockquote {
+  .voice-card {
     min-height: auto;
     padding: 25px 22px;
   }
