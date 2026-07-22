@@ -240,7 +240,7 @@ p {
 
 .button.instagram-button {
   color: #83506d;
-  background: linear-gradient(135deg, #f9d2b4 0%, #efadc8 50%, #d8b9e6 100%);
+  background: #f9d2b4;
   border-color: rgba(139, 100, 120, 0.3);
 }
 
