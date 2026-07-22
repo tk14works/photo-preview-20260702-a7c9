@@ -1058,6 +1058,18 @@ details p {
   background: var(--paper);
 }
 
+@media (min-width: 901px) {
+  .menu-page-hero {
+    text-align: center;
+  }
+
+  .menu-page-hero h1,
+  .menu-page-hero p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .menu-detail-page {
   display: grid;
   gap: 28px;
@@ -1268,6 +1280,13 @@ details p {
   font-size: 14px;
   line-height: 1.9;
   overflow-wrap: anywhere;
+}
+
+.menu-plan-note {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
 }
 
 .menu-note {
