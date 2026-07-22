@@ -808,6 +808,10 @@ p {
   font-size: 13px;
 }
 
+.preparation-note {
+  margin-top: 16px;
+}
+
 .voice-carousel {
   position: relative;
 }
