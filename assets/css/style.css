@@ -1031,7 +1031,7 @@ details p {
   gap: 20px;
   padding: 28px clamp(18px, 4vw, 54px);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
   border-top: 1px solid rgba(205, 190, 182, 0.35);
 }
 
