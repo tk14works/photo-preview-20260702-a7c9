@@ -1369,35 +1369,48 @@ details p {
   text-align: center;
 }
 
-.english-detail-grid {
+.english-detail-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 0;
+  margin: 10px 0 0;
 }
 
-.english-detail-card {
-  min-width: 0;
-  padding: 22px 20px;
-  background: var(--cream);
-  border: 1px solid var(--soft-line);
-  border-radius: var(--radius);
+.english-detail-list div {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.28fr) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 34px);
+  padding: 22px 0;
+  border-top: 1px solid var(--soft-line);
 }
 
-.english-detail-card h3 {
-  margin-bottom: 10px;
+.english-detail-list div:last-child {
+  border-bottom: 1px solid var(--soft-line);
+}
+
+.english-detail-list dt {
+  color: var(--ink);
+  font-family: var(--serif);
   font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
-.english-detail-card p,
-.english-detail-card li {
+.english-detail-list dd {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.english-detail-list p,
+.english-detail-list li {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.95;
   overflow-wrap: anywhere;
 }
 
-.english-detail-card ul {
+.english-detail-list ul {
   display: grid;
   gap: 6px;
   margin: 0;
@@ -1411,10 +1424,6 @@ details p {
   font-size: 22px !important;
   font-weight: 600;
   line-height: 1.5 !important;
-}
-
-.english-note {
-  margin-top: 8px;
 }
 
 .english-contact p {
@@ -1928,12 +1937,10 @@ details p {
     padding: 24px 20px;
   }
 
-  .english-detail-grid {
+  .english-detail-list div {
     grid-template-columns: 1fr;
-  }
-
-  .english-detail-card {
-    padding: 22px 18px;
+    gap: 8px;
+    padding: 18px 0;
   }
 
   .menu-detail-list div {
