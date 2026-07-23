@@ -1009,6 +1009,10 @@ details p {
   overflow-wrap: anywhere;
 }
 
+.contact-text-mobile {
+  display: none;
+}
+
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1027,7 +1031,7 @@ details p {
   gap: 20px;
   padding: 28px clamp(18px, 4vw, 54px);
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   border-top: 1px solid rgba(205, 190, 182, 0.35);
 }
 
@@ -1829,6 +1833,14 @@ details p {
     margin-right: 0;
     margin-left: 0;
     padding: 60px 24px;
+  }
+
+  .contact-text-desktop {
+    display: none;
+  }
+
+  .contact-text-mobile {
+    display: block;
   }
 
   .faq details {
